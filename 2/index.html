@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>实现三个元素变化效果</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    #box1,#box2,#box3{
+        color: #fff;
+        width:200px;
+        height:230px;
+        background-color: #e4393e;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    #box2{
+        background-color: greenyellow;
+    }
+    #box3{
+        background-color: #e4e4e4;
+    }
+  </style>
+</head>
+<body>
+  <!-- #box$*3 -->
+  <div id="box1">随机更换背景颜色</div>
+  <div id="box2">宽度慢慢变大</div>
+  <div id="box3">宽度慢慢变大，并且随机变换背景颜色 </div>
+
+
+  <script type="module" src="js/index.js"></script>
+
+  <!-- 将以下代码模块化 -->
+  <!-- <script>
+      var box1=document.getElementById('box1');
+      var box2=document.getElementById('box2');
+      var box3=document.getElementById('box3');
+      // 定义随机变化背景色函数
+      function rgb(obj){
+        setInterval(function(){
+          var r=Math.floor(Math.random()*256);
+          var g=Math.floor(Math.random()*256);
+          var b=Math.floor(Math.random()*256);
+          obj.style.backgroundColor='rgb('+r+','+g+','+b+')';
+        },3000)
+      }
+
+      rgb(box1)
+
+      function widthBigger(obj){
+          setInterval(function(){
+            // 获取元素当前宽度
+            var oldWid=box2.offsetWidth;
+            obj.style.width=2+oldWid + 'px';
+          },500)
+      }
+      widthBigger(box2)
+
+      rgb(box3)
+      widthBigger(box3)
+  </script> -->
+</body>
+</html>

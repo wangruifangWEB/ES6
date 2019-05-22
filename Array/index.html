@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ES6-数组的循环</title>
+</head>
+<body>
+  <script>
+    /*
+
+     for
+     while
+   
+     arr.forEach()
+       用于代替普通for循环
+      arr.forEach(function(val,index,arr){
+         val---当前值
+         index---当前下标
+         arr---原数组
+      })
+
+       arr.forEach((val,index,arr)=>{
+         val---当前值
+         index---当前下标
+         arr---原数组
+      })
+     arr.map() //做数据交互（映射）
+        正常情况需要return，返回的是一个新数组
+        若是没有return,相当于forEach
+        注意：
+         平时使用需要return，否则无需用
+        适用场合：
+          重新整理数据结构
+     arr.filter()
+        过滤：过滤一些不合格元素
+        如果回调函数返回true，则符合
+
+     arr.some()  
+       类似查找
+       某一个元素符合条件，返回true
+     arr.every()
+      类似查找
+       数组里面所有元素都符合，才会返回true
+
+  ------------------------------------------------
+     arr.reduce(function(prev,cur,index,arr){})
+        求数组的和、阶乘
+     arr.reduceRight() 从右开开始
+
+----------------------------------------------------
+     for..of  
+       arr.keys()数组下标
+       arr.entries() 数组某一项
+     for...in
+
+     Array.from()
+       将类数组转换成数组   大多数有length属性，就是类数组、、、
+
+    Array.of()
+      把一组值，转换成数组
+
+      arr.find()
+      找出第一个符合条件的
+
+      arr.findIndex:找的是位置，没找到返回-1
+
+      arr.fill(填充的东西，开始位置，结束位置) 填充数据
+
+      arr.includes() 是否包含，有返回true
+
+      arr.indexOf()
+
+      ------------------------------------------------
+      对象简介写法（注意：不要用箭头函数）
+        json
+
+        Object.is()  用来比较两个东西相等
+
+        Object.is(+0,-0)  false
+
+         Object.is(NaN,NaN)  true
+
+         let 新的对象=Object.assign(目标对象，source1,source2,...);
+
+         用途：
+         复制对象
+         合并参数
+
+
+    */ 
+
+    let arr=[1,2,3,5,6];
+    arr.forEach((val,index,arr)=>{
+      console.log(this,val,index,arr);
+    },123)
+    // 箭头函数中的this指向定义的对象中  即此案例中this->window
+
+
+   let arrVal= arr.map((val,index,arr)=>{
+      console.log(this,val,index,arr);
+      return val;
+    })
+
+    console.log(arrVal);
+
+
+
+    let arrFilter=arr.filter((val,index,arr)=>{
+      return val > 3;
+    })
+
+    console.log(arrFilter);
+
+
+    let arrSome=arr.some((val,index,arr)=>{
+      return val==3;
+    })
+
+    console.log(arrSome);
+
+
+    let arrEvery=arr.every((val,index,arr)=>{
+      return val%2==1;
+    })
+
+    console.log(arrEvery);
+
+    //------------------------------------------------
+
+    let arrReduce=arr.reduce((prev,cur,index,arr)=>{
+      return prev+cur; //上一个加上当前
+    })
+
+    console.log(arrReduce);
+
+
+    let arrReduce2=arr.reduce((prev,cur,index,arr)=>{
+      // return Math.pow(prev,cur); //几的几次方
+
+      return prev**cur;
+    })
+
+    console.log(arrReduce2);
+
+    // 幂运算符
+    console.log(2**3);
+
+
+    let arrFind=arr.find((val,index,arr)=>{
+      // return Math.pow(prev,cur); //几的几次方
+
+      return val > 1;
+    })
+
+    console.log(arrFind);
+  </script>
+</body>
+</html>

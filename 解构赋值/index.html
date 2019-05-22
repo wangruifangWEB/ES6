@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ES6-解构赋值</title>
+</head>
+<body>
+  <script>
+    /*
+    适用于  做数据交互  ex：ajax
+    注意：左右两边，结构格式要保持一致
+    */ 
+    let [a,b,c] = [12,13,14]
+    console.log(a,b,c);
+
+    // let [a,[b,c]]=[12,[13,14]]
+
+    let json={
+      name:'Strive',
+      age:18,
+      job:'码农'
+    }
+
+    let {name,age,job}=json;
+    console.log(name,age,job);
+
+    // let {name,age,job:aa}=json;  //aa相当于取一别名
+    // console.log(name,age,aa);
+
+    let [d,e,f='暂无数据']=['dd','ee']  //可以初始化
+    // let [d,e,f='暂无数据']=['dd','ee',undefined]  //可以初始化
+    // let [d,e,f='暂无数据']=['dd','ee',null]  //有值，但未null，干不过 ;;做判断实现即可
+    console.log(d,e,f);
+    
+  </script>
+</body>
+</html>

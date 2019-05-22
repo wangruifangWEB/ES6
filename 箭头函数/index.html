@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ES6-箭头函数</title>
+</head>
+<body>
+  <script>
+      /*
+      1.函数默认参数
+          可以设置默认值
+      2.函数的变化：
+         函数参数默认已经定义了，不能使用let、const声明
+
+      扩展（reset）运算符
+      ...
+      展开数组
+      剩余运算符：必须放到最后
+
+      箭头函数
+      注意：
+         this问题，定义函数所在的对象，不是运行时所在的对象
+        没有arguments
+        用...
+      let show=(...args)=>{
+        return args;
+      }
+      箭头函数不能当构造函数
+      */ 
+
+     
+
+      function show2(){
+        let a=Array.prototype.slice.call(arguments);
+        return a.sort();
+      }
+      console.log(show2(1,4,5,8,3,2));
+
+      var arr=[1,2,3]
+      console.log(...arr);
+      function show(...a){
+        console.log(a);
+      }
+      show(1,2,3,4,5);
+
+      let show=(a,b)=>{
+        return a+b;
+      }
+  </script>
+</body>
+</html>

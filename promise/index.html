@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /*
+    promise语法：
+    let promise = new Promise(function(resolve,reject){
+       //resolve  成功调用
+      //reject  失败调用
+    })
+
+     promise.then(res=>{
+      console.log(res);
+    },err=>{
+      console.log(err);
+    })
+    \*/ 
+
+    let promise=new Promise(function(resolve,reject){
+       //resolve  成功调用
+      //reject  失败调用
+      if(true){
+        resolve('success')
+      }else{
+        reject('fail');
+      }
+    })
+
+    promise.then(res=>{
+      console.log(res);
+    },err=>{
+      console.log(err);
+    })
+
+    promise.catch(err=>{
+      console.log(res);
+    })
+
+  </script>
+</body>
+</html>
